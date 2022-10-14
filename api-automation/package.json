@@ -1,7 +1,7 @@
 {
     "name": "api-automation-test",
     "version": "1.0.0",
-    "description": "API automation test sample",
+    "description": "API automation test",
     "main": "index.js",
     "license": "ISC",
     "scripts": {
@@ -20,7 +20,6 @@
     "eslintIgnore": [
         "node_modules"
     ],
-    "author": "jessicatheodora17",
     "devDependencies": {
         "chai": "^4.3.6",
         "chai-arrays": "^2.2.0",
