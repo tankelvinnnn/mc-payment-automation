@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
-    "cypress": "node ./node_modules/.bin/cypress open",
+    "test-ui": "node ./node_modules/.bin/cypress run",
     "test-webui": "npm run clean:reports && ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\" --record --key"
   },
   "dependencies": {

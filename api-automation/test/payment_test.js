@@ -25,6 +25,7 @@ const testCase={
 		noOrderId : 'If the order id does not filled',
 		invalidOrderId : 'If the order id using character other than alphabet, numeric, and -',
 		invalidExpiredTime : 'If the expired time format is not ISO 8601',
+		passedExpiredTime : 'If the expired tome is already passed',
 		noSignatureKey : 'If the signature key does not filled',
 		invalidSignatureKey : 'As a User, I does not want to do a payment without using valid signature',
 		
@@ -184,6 +185,18 @@ describe(`@payment ${testCase.describe}`, () => {
 			const response = await pagePayment.postPayment(accessToken,data.paymentMethod, newData)
 			assert(response.status).to.equal(400);
 			assert(response.body.status_message).to.equal('Expired Date must follow ISO 8601 format');
+		})
+		it(`@payment ${testCase.negative.passedExpiredTime}`, async () => {
+			let newData = JSON.parse(JSON.stringify(data.validData));
+			
+			newData.expired_time = data.passedExpiredTime;
+			newSignature = generateSignature.hash(data.secretKey+newData.mrc_id+newData.amount
+				+newData.customer_info+newData.payment_info+newData.order_id);
+			newData.signature = newSignature;
+
+			const response = await pagePayment.postPayment(accessToken,data.paymentMethod, newData)
+			assert(response.status).to.equal(400);
+			assert(response.body.status_message).to.equal('Expired time must be in future');
 		})
 		it(`@payment ${testCase.negative.noSignatureKey}`, async () => {
 			const response = await pagePayment.postPayment(accessToken,data.paymentMethod, data.validData)
