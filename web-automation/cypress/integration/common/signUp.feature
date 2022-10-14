@@ -1,4 +1,4 @@
-@userLogin
+@userLoginRegister
 
 Feature: User SignUp
 
@@ -20,7 +20,6 @@ Scenario: User sign up with empty first name
     Given User open the website
     Then User click Sign In
     Then User click Create a new Account
-    When User fill firstname with ""
     And User fill lastname with "kelvin"
     And User fill the email with "kelvintest@mail.com"
     And User fill Password with "12345678"
@@ -33,7 +32,6 @@ Given User open the website
     Then User click Sign In
     Then User click Create a new Account
     When User fill firstname with "kelvin"
-    And User fill lastname with ""
     And User fill the email with "kelvintest@mail.com"
     And User fill Password with "12345678"
     And User check the terms
@@ -46,7 +44,6 @@ Given User open the website
     Then User click Create a new Account
     When User fill firstname with "kelvin"
     And User fill lastname with "kelvin"
-    And User fill the email with ""
     And User fill Password with "12345678"
     And User check the terms
     Then User click Sign Up Button
@@ -58,7 +55,7 @@ Scenario: User sign up with registered email
     Then User click Create a new Account
     When User fill firstname with "kelvin"
     And User fill lastname with "kelvin"
-    And User fill the email with "kelvintest@mail.com"
+    And User fill the email with account "kelvintest@mail.com"
     And User fill Password with "12345678"
     And User check the terms
     Then User click Sign Up Button
@@ -68,7 +65,7 @@ Scenario: User sign up with invalid email
     Given User open the website
     Then User click Sign In
     Then User click Create a new Account
-    When User fill firstname with ""
+    When User fill firstname with "kelvin"
     And User fill lastname with "kelvin"
     And User fill the email with "kelvintest"
     And User fill Password with "12345678"
@@ -83,7 +80,6 @@ Scenario: User sign up with empty password
     When User fill firstname with "kelvin"
     And User fill lastname with "kelvin"
     And User fill the email with "kelvintest@mail.com"
-    And User fill Password with ""
     And User check the terms
     Then User click Sign Up Button
     Then User will see an error message "Password can't be blank"
@@ -104,7 +100,7 @@ Scenario: User sign up with does not check the terms
     Given User open the website
     Then User click Sign In
     Then User click Create a new Account
-    When User fill firstname with ""
+    When User fill firstname with "kelvin"
     And User fill lastname with "kelvin"
     And User fill the email with "kelvintest@mail.com"
     And User fill Password with "12345678"

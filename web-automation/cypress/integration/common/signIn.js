@@ -7,11 +7,13 @@ Given('User open the website', ()=>{
     cy
     .clearCookies()
     .visit('https://courses.ultimateqa.com/')
+    .wait(3000)
 })
 
 Then('User click Sign In', () =>{
     cy
     .get(signInObject.signInLink)
+    .contains('Sign In')
     .click()
 })
 
@@ -35,12 +37,14 @@ And('User click Sign In Button', () =>{
 
 Then('User success to login', () => {
     cy
+    .wait(3000)
     .get(signInObject.success)
     .should('contain','My Dashboard')
 })
 
 Then('User fail to login', () =>{
     cy
+    .wait(3000)
     .get(signInObject.message)
-    .should('contain','Invalid username/password')
+    .should('contain','Invalid email or password.')
 })

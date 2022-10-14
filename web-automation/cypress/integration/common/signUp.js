@@ -7,11 +7,13 @@ Given('User open the website', ()=>{
     cy
     .clearCookies()
     .visit('https://courses.ultimateqa.com/')
+    .wait(3000)
 })
 
 Then('User click Sign In', () =>{
     cy
     .get(signUpObject.signInLink)
+    .contains('Sign In')
     .click()
 })
 
@@ -34,6 +36,12 @@ And('User fill lastname with {string}', lastName => {
 })
 
 And('User fill the email with {string}', email => {
+    cy
+    .get(signUpObject.emailField)
+    .type(email+Date.now())
+})
+
+And('User fill the email with account {string}', email => {
     cy
     .get(signUpObject.emailField)
     .type(email)

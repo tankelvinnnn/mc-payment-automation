@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
-    "test-ui": "node ./node_modules/.bin/cypress run",
+    "test-ui": "node ./node_modules/.bin/cypress open",
     "test-webui": "npm run clean:reports && ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\" --record --key"
   },
   "dependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.1",
-    "cypress-file-upload": "^5.0.8",
-    "dotenv": "^8.2.0"
+    "cypress-cucumber-preprocessor": "^2.0.1",
+    "cypress-file-upload": "^4.0.6"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
@@ -22,6 +21,7 @@
     }
   },
   "devDependencies": {
-    "cypress": "^10.10.0"
+    "cypress": "^4.2.0",
+    "dotenv": "^16.0.3"
   }
 }
