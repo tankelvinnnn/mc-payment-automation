@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+      "status_message",
+      "status_code",
+      "process_id",
+      "transaction_id",
+      "order_id",
+      "amount",
+      "payment_code",
+      "transaction_time",
+      "expired_time"
+  ],
+  "properties": {
+      "status_message": {
+          "type": "string",
+          "default": "",
+          "title": "The status_message Schema",
+          "examples": [
+              "Success transaction"
+          ]
+      },
+      "status_code": {
+          "type": "integer",
+          "default": 0,
+          "title": "The status_code Schema",
+          "examples": [
+              201
+          ]
+      },
+      "process_id": {
+          "type": "string",
+          "default": "",
+          "title": "The process_id Schema",
+          "examples": [
+              ""
+          ]
+      },
+      "transaction_id": {
+          "type": "string",
+          "default": "",
+          "title": "The transaction_id Schema",
+          "examples": [
+              "7384bca0-4006-4046-9d35-840859901478"
+          ]
+      },
+      "order_id": {
+          "type": "string",
+          "default": "",
+          "title": "The order_id Schema",
+          "examples": [
+              "ORDER-12345"
+          ]
+      },
+      "amount": {
+          "type": "integer",
+          "default": 0,
+          "title": "The amount Schema",
+          "examples": [
+              10000
+          ]
+      },
+      "payment_code": {
+          "type": "string",
+          "default": "",
+          "title": "The payment_code Schema",
+          "examples": [
+              "8474014013442291"
+          ]
+      },
+      "transaction_time": {
+          "type": "string",
+          "default": "",
+          "title": "The transaction_time Schema",
+          "examples": [
+              "2022-10-14T10:40:36.99+07:00"
+          ]
+      },
+      "expired_time": {
+          "type": "string",
+          "default": "",
+          "title": "The expired_time Schema",
+          "examples": [
+              "2022-12-31T14:20:04.494+07:00"
+          ]
+      }
+  },
+  "examples": [{
+      "status_message": "Success transaction",
+      "status_code": 201,
+      "process_id": "",
+      "transaction_id": "7384bca0-4006-4046-9d35-840859901478",
+      "order_id": "ORDER-12345",
+      "amount": 10000,
+      "payment_code": "8474014013442291",
+      "transaction_time": "2022-10-14T10:40:36.99+07:00",
+      "expired_time": "2022-12-31T14:20:04.494+07:00"
+  }]
+}

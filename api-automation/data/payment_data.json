@@ -1,0 +1,18 @@
+{
+    "paymentMethod" : "VA_MUAMALAT",
+    "secretKey" : "WI6SGsk1Du",
+    "validData" : {
+        "amount": 10000,
+        "mrc_id": "QATe211201",
+        "customer_info": "kelvin@mail.com",
+        "payment_info": "payment",
+        "order_id": "ORDER-12345",
+        "expired_time": "2022-10-14T14:20:04.494+07:00",
+        "signature": ""
+    },
+    "lessAmount" : 9999,
+    "invalidMerchantId" : "QATes221014",
+    "invalidCustomerInfo" : "H&M",
+    "invalidOrderId" : "orderid_123",
+    "invalidExpiredTime" : "2022-10-14"
+}
