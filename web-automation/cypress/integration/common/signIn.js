@@ -11,7 +11,7 @@ Given('User open the website', ()=>{
 
 Then('User click Sign In', () =>{
     cy
-    .get(signInObject.signInButton)
+    .get(signInObject.signInLink)
     .click()
 })
 

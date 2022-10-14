@@ -5,6 +5,7 @@ class signIn {
       this.passwordField = 'input[id="user[password]"]'
       this.message = 'li[role="alert"]'
       this.signInButton = 'button[value="Sign in"]'
+      this.signInLink = 'a[href*=/users/sign_in]'
       this.success = 'li[class="header__nav-item"]'
     }
   }
