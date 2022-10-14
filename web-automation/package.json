@@ -1,0 +1,27 @@
+{
+  "name": "web-automation-test",
+  "version": "1.0.0",
+  "description": "Web automation test",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
+    "cypress": "node ./node_modules/.bin/cypress open",
+    "test-webui": "npm run clean:reports && ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\" --record --key"
+  },
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "dotenv": "^8.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/results",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "devDependencies": {
+    "cypress": "^10.10.0"
+  }
+}
