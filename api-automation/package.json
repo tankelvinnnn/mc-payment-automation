@@ -52,6 +52,7 @@
         "uuid": "^8.3.0"
     },
     "dependencies": {
+        "api-automation-test": "file:",
         "node": "^18.10.0"
     }
 }

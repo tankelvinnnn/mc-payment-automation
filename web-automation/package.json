@@ -6,11 +6,13 @@
   "scripts": {
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
     "test-ui": "node ./node_modules/.bin/cypress open",
-    "test-webui": "npm run clean:reports && ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\" --record --key"
+    "test-webui": "node ./node_modules/.bin/cypress run",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "cypress-cucumber-preprocessor": "^2.0.1",
-    "cypress-file-upload": "^4.0.6"
+    "cypress-file-upload": "^4.0.6",
+    "web-automation-test": "file:"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
