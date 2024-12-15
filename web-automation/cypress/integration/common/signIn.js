@@ -32,6 +32,7 @@ And('User fill Password with {string}', password =>{
 And('User click Sign In Button', () =>{
     cy
     .get(signInObject.signInButton)
+    .contains('Sign in')
     .click()
 })
 

@@ -4,7 +4,7 @@ class signIn {
       this.emailField = 'input[id="user[email]"]'
       this.passwordField = 'input[id="user[password]"]'
       this.message = 'ul[class="form-error__list"]'
-      this.signInButton = 'input[value="Sign in"]'
+      this.signInButton = 'button[type="submit"]'
       this.signInLink = 'li[class="header__nav-item header__nav-sign-in"]'
       this.success = 'li[class="header__nav-item"]'
     }
